@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         // 判断用户名和密码是否正确
         if (usernameStr.equals("123") && passwordStr.equals("456")) {
             // 跳转到主页面
-            setContentView(R.layout.activity_main2);
+            setContentView(R.layout.activity_table_bar);
         } else {
             // 密码错误弹窗
             new AlertDialog.Builder(this)

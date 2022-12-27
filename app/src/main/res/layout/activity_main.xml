@@ -8,10 +8,10 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="250dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginEnd="14dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="25dp"
         android:height="50dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -20,28 +20,16 @@
         app:layout_constraintStart_toEndOf="@+id/account"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="184dp"
-        android:height="50dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/psw"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
-
     <TextView
         android:id="@+id/account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="8dp"
+        android:lineSpacingExtra="8sp"
         android:text="账号"
         android:textSize="20sp"
+        android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="@+id/username"
         app:layout_constraintEnd_toStartOf="@+id/username"
         app:layout_constraintStart_toStartOf="parent" />
@@ -50,12 +38,27 @@
         android:id="@+id/psw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="8dp"
         android:text="密码"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/password" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="180dp"
+        android:height="50dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/psw"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -63,21 +66,36 @@
         android:layout_height="0dp"
         android:layout_marginTop="96dp"
         android:layout_marginBottom="75dp"
+        android:src="@drawable/avatar"
         app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/avatar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="0dp"
         android:onClick="login"
         android:text="login"
         app:layout_constraintEnd_toEndOf="@+id/password"
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:rippleColor="#FF5722" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="憨憨记账"
+        android:textAlignment="gravity"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.491" />
 </androidx.constraintlayout.widget.ConstraintLayout>
