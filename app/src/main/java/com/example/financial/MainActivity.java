@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static String pwd = "456";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
         String usernameStr = username.getText().toString();
         String passwordStr = password.getText().toString();
         // 判断用户名和密码是否正确
-        if (usernameStr.equals("123") && passwordStr.equals("456")) {
+        if (usernameStr.equals("123") && passwordStr.equals(pwd)) {
             // 跳转到主页面
-            setContentView(R.layout.activity_table_bar);
+            setContentView(R.layout.activity_bar);
         } else {
             // 密码错误弹窗
             new AlertDialog.Builder(this)
                     .setTitle("登录失败")
-                    .setMessage("账号或密码错误(账号：123，密码：456)")
+                    .setMessage("账号或密码错误(账号：123，密码：" + pwd + ")")
                     .setPositiveButton("确定", null)
                     .show();
         }

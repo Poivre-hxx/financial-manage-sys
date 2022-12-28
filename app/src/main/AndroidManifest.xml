@@ -13,9 +13,9 @@
         android:theme="@style/Theme.Financial"
         tools:targetApi="26">
         <activity
-            android:name=".TableBar"
+            android:name=".bar"
             android:exported="false"
-            android:label="@string/title_activity_table_bar">
+            android:label="@string/title_activity_bar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -6,5 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".ui.notifications.NotificationsFragment">
 
+    <TextView
+        android:id="@+id/text_notifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="221dp"
+            android:layout_height="181dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/avatar" />
+
+        <Button
+            android:id="@+id/LogoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="LogoutButton"
+            android:layout_marginTop="60dp"
+            android:text="注销" />
+
+        <Button
+            android:id="@+id/pwdButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="pwdButton"
+            android:layout_marginTop="10dp"
+            android:text="更改密码" />
+
+        <EditText
+            android:id="@+id/editpwd"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="请输入新密码" />
+
+        <Button
+            android:id="@+id/checkBtn"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="确认修改" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

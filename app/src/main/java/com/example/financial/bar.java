@@ -10,17 +10,17 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.financial.databinding.ActivityTableBarBinding;
+import com.example.financial.databinding.ActivityBarBinding;
 
-public class TableBar extends AppCompatActivity {
+public class bar extends AppCompatActivity {
 
-    private ActivityTableBarBinding binding;
+    private ActivityBarBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityTableBarBinding.inflate(getLayoutInflater());
+        binding = ActivityBarBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -29,9 +29,10 @@ public class TableBar extends AppCompatActivity {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_table_bar);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_bar);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
     }
 
 }
