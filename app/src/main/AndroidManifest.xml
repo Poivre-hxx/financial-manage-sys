@@ -13,6 +13,13 @@
         android:theme="@style/Theme.Financial"
         tools:targetApi="26">
         <activity
+            android:name=".DetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".bar"
             android:exported="false"
             android:label="@string/title_activity_bar">

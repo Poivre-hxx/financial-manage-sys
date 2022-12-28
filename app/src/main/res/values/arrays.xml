@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="classArray">
+        <item>请选择</item>
+        <item>名称</item>
+        <item>类别</item>
+        <item>金额</item>
+        <item>月份</item>
+        <item>日期</item>
+    </string-array>
+</resources>
