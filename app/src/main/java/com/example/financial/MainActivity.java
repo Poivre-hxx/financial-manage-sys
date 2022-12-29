@@ -3,6 +3,7 @@ package com.example.financial;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         // 判断用户名和密码是否正确
         if (usernameStr.equals("123") && passwordStr.equals(pwd)) {
             // 跳转到主页面
-            setContentView(R.layout.activity_bar);
+            startActivity(new Intent(MainActivity.this, bar.class));
         } else {
             // 密码错误弹窗
             new AlertDialog.Builder(this)

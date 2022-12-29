@@ -5,16 +5,16 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.view.View;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ExpendRepo {
     public DBHelper dbHelper;
 
-    public ExpendRepo(Context context) {
-        dbHelper = new DBHelper(context);
+    public ExpendRepo(View.OnClickListener context) {
+        dbHelper = new DBHelper((Context) context);
     }
 
     public int insert(Expend expend) {

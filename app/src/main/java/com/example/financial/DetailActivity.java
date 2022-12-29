@@ -49,21 +49,6 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         edDate.setText(String.valueOf(expend.date));
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(MenuItem item) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public void onClick(View v) {
@@ -79,11 +64,10 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
             if (_Exp_Id == 0){
                 _Exp_Id = repo.insert(expend);
-
-                Toast.makeText(this,"New Expend Insert",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"添加成功",Toast.LENGTH_SHORT).show();
             }else{
                 repo.update(expend);
-                Toast.makeText(this,"Expend Record updated",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"重载成功",Toast.LENGTH_SHORT).show();
             }
         }else if (v == findViewById(R.id.btnDelete)){
             ExpendRepo repo = new ExpendRepo(this);
@@ -91,7 +75,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
             Toast.makeText(this,"Expend Record Deleted",Toast.LENGTH_SHORT).show();
             finish();
         }else if (v == findViewById(R.id.btnClosed)){
-            finish();
+            setContentView(R.layout.activity_bar);
         }
     }
 }

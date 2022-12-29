@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/money_chosen"
-        android:title="@string/title_home"
-        app:destination="@id/navigation_home"
-        app:showAsAction="withText" />
+        android:title="@string/title_home" />
 
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/pie_chosen"
-        android:title="@string/title_dashboard"
-        app:destination="@id/navigation_dashboard"
-        app:showAsAction="withText" />
+        android:title="@string/title_dashboard" />
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/settings_chosen"
-        android:title="@string/title_notifications"
-        app:destination="@id/navigation_notifications"
-        app:showAsAction="withText" />
+        android:title="@string/title_notifications" />
 
 </menu>

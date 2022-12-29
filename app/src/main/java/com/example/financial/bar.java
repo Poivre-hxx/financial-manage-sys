@@ -10,19 +10,13 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.financial.databinding.ActivityBarBinding;
-
 public class bar extends AppCompatActivity {
-
-    private ActivityBarBinding binding;
+    public static Boolean isLogin = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = ActivityBarBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
+        setContentView(R.layout.activity_bar);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -31,8 +25,15 @@ public class bar extends AppCompatActivity {
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_bar);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        NavigationUI.setupWithNavController(navView, navController);
 
+        // 打印isLogin
+        System.out.println("isLogin: " + isLogin);
+//        // 判断是否登录
+//        if (!isLogin) {
+//            // 跳转到登录页面
+//            setContentView(R.layout.activity_main);
+//        }
     }
 
 }

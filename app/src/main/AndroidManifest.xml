@@ -10,36 +10,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Financial"
-        tools:targetApi="26">
-        <activity
-            android:name=".DetailActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".bar"
-            android:exported="false"
-            android:label="@string/title_activity_bar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+        android:theme="@style/Theme.Financial">
         <activity
             android:name=".MainActivity"
+            android:label="憨憨记账"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
+        <activity
+            android:name=".bar"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
