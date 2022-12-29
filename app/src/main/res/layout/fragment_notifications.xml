@@ -49,22 +49,6 @@
             android:layout_marginTop="10dp"
             android:text="更改密码" />
 
-        <EditText
-            android:id="@+id/editpwd"
-            android:visibility="invisible"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="请输入新密码" />
-
-        <Button
-            android:id="@+id/checkBtn"
-            android:visibility="invisible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="确认修改" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

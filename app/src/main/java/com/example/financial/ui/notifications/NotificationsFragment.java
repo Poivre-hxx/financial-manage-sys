@@ -1,6 +1,8 @@
 package com.example.financial.ui.notifications;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.financial.MainActivity;
+import com.example.financial.R;
 import com.example.financial.databinding.FragmentNotificationsBinding;
 
 import org.w3c.dom.Text;
@@ -46,21 +49,26 @@ public class NotificationsFragment extends Fragment {
         });
 
         Button btnpwd = binding.pwdButton;
-        EditText newpwd = binding.editpwd;
-        Button btncheck = binding.checkBtn;
+
 
         btnpwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                newpwd.setVisibility(View.VISIBLE);
-                btncheck.setVisibility(View.VISIBLE);
-                btncheck.setOnClickListener(new View.OnClickListener() {
+                Dialog dialog;
+                // 显示 dialog
+                LayoutInflater inflaterDialog = LayoutInflater.from(getActivity());
+                View viewDialog = inflaterDialog.inflate(R.layout.fragment_changepwd, null);
+                AlertDialog.Builder builderDialog = new AlertDialog.Builder(getActivity());
+                builderDialog.setView(viewDialog);
+                dialog = builderDialog.create();
+                dialog.show();
+                viewDialog.findViewById(R.id.checkBtn).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        EditText newpwd = viewDialog.findViewById(R.id.editpwd);
+                        dialog.dismiss();
                         String pwd = newpwd.getText().toString();
                         MainActivity.pwd = pwd;
-                        newpwd.setVisibility(View.INVISIBLE);
-                        btncheck.setVisibility(View.INVISIBLE);
                         // 跳出弹窗
                         Toast.makeText(getActivity(), "密码修改成功", Toast.LENGTH_SHORT).show();
                         getActivity().onBackPressed();
