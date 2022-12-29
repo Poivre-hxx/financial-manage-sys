@@ -1,22 +1,21 @@
 package com.example.financial;
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "expend_table")
 public class Expend {
-    // 表明
-    public static final String TABLE = "expend";
+    @PrimaryKey
+    @NonNull
+    @ColumnInfo(name = "expend")
+    private String mExpend;
 
-    // 表的各域名
-    public static final String KEY_ID="id";
-    public static final String KEY_expName="expName";
-    public static final String KEY_label="label";
-    public static final String KEY_price="price";
-    public static final String KEY_month="month";
-    public static final String KEY_date="date";
+    public Expend(@NonNull String expend) {
+        this.mExpend = expend;
+    }
 
-    // 属性
-    public int id;
-    public String expName;
-    public String label;
-    public float price;
-    public int month;
-    public int date;
+    public String getExpend() {
+        return this.mExpend;
+    }
 }

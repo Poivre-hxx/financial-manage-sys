@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">憨憨记账</string>
     <string name="title_activity_bar">Bar</string>
-    <string name="title_home">账单</string>
-    <string name="title_dashboard">分析</string>
+    <string name="title_home">数据</string>
+    <string name="title_dashboard">账单</string>
     <string name="title_notifications">我的</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

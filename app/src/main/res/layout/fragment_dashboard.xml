@@ -26,59 +26,19 @@
         android:background="#ffffff"
         android:padding="16dp">
 
-        <Spinner
-            android:id="@+id/querySpinner"
-            android:layout_width="340dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="0dp"
-            android:layout_marginEnd="20dp"
-            android:dropDownWidth="match_parent"
-            android:entries="@array/classArray"
-            android:scrollbarSize="10dp" />
-
-        <EditText
-            android:id="@+id/queryData"
-            android:visibility="invisible"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="请输入查询内容" />
-
-        <Button
-            android:id="@+id/queryBtn"
-            android:visibility="invisible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="30dp"
-            android:layout_gravity="right"
-            android:text="查询" />
-
-        <ListView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="80dp" />
-
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:text="Add" />
-
-        <Button
-            android:id="@+id/ListAll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:text="ListAll" />
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_dashboard" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
