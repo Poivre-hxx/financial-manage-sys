@@ -51,4 +51,7 @@ public class ExpendListAdapter extends RecyclerView.Adapter<ExpendListAdapter.Ex
         else return 0;
     }
 
+    public Expend getExpendAtPosition (int position) {
+        return mExpends.get(position);
+    }
 }

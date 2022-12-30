@@ -20,4 +20,10 @@ public interface ExpendDAO {
 
     @Query("SELECT * FROM expend_table ORDER BY expend ASC")
     LiveData<List<Expend>> getAllExpends();
+
+    @Query("SELECT * FROM expend_table LIMIT 1")
+    Expend[] getAnyExpend();
+
+    @Delete
+    void deleteExpend(Expend expend);
 }

@@ -24,4 +24,10 @@ public class ExpendViewModel extends AndroidViewModel {
     public void insert(Expend expend) {
         mRepository.insert(expend);
     }
+    public void deleteAll() {
+        mRepository.deleteAll();
+    }
+    public void deleteExpend(Expend expend) {
+        mRepository.deleteExpend(expend);
+    }
 }

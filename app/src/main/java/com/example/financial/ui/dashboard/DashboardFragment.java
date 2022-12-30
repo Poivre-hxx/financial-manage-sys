@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,6 +25,7 @@ import com.example.financial.databinding.FragmentDashboardBinding;
 import com.example.financial.databinding.FragmentHomeBinding;
 import com.example.financial.ui.home.HomeFragment;
 import com.example.financial.ui.home.HomeViewModel;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -56,6 +59,33 @@ public class DashboardFragment extends Fragment {
             }
         });
 
+        FloatingActionButton fab = binding.fab;
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "数据清除成功", Toast.LENGTH_SHORT).show();
+                mExpendViewModel.deleteAll();
+            }
+        });
+
+        ItemTouchHelper helper = new ItemTouchHelper(
+                new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+                    @Override
+                    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
+                                          @NonNull RecyclerView.ViewHolder target) {
+                        return false;
+                    }
+
+                    @Override
+                    public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                        int position = viewHolder.getAdapterPosition();
+                        Expend myExpend = adapter.getExpendAtPosition(position);
+                        Toast.makeText(getActivity(), "删除" + myExpend.getExpend(), Toast.LENGTH_SHORT).show();
+                        mExpendViewModel.deleteExpend(myExpend);
+                    }
+                }
+        );
+        helper.attachToRecyclerView(recyclerView);
 
         return root;
     }
@@ -66,4 +96,5 @@ public class DashboardFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
 }

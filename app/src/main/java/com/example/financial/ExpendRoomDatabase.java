@@ -56,9 +56,11 @@ public abstract class ExpendRoomDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(final Void... params) {
             mDao.deleteAll();
-            for(int i = 0; i <= expends.length - 1; i++) {
-                Expend expend = new Expend(expends[i]);
-                mDao.insert(expend);
+            if(mDao.getAnyExpend().length < 1) {
+                for(int i = 0; i <= expends.length - 1; i++) {
+                    Expend expend = new Expend(expends[i]);
+                    mDao.insert(expend);
+                }
             }
             return null;
         }
