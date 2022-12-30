@@ -1,2 +1,2 @@
 # financial manage sys
- 个人理财系统
+ 个人记账
